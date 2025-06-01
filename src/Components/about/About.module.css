@@ -1,0 +1,41 @@
+.aboutcontent {
+    
+    margin-top: 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:100vh ;
+
+    width: 100%;
+    gap: 20px;
+}
+
+.aboutcontent h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    animation: slideDown 0.8s ease-out forwards;
+    animation-delay: 0.2s
+}
+
+.aboutcontent p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    animation: slideDown 0.8s ease-out forwards;
+    animation-delay: 0.2s
+}
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,160 @@
+.footer {
+    width: 100%;
+    background-color: #034C53; /* لون خلفية مشابه للـ h1 بتاع الفورم */
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .footer .section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer .section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer .section a {
+    color: #f1f5f8;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer .section a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .footer .social-icons a {
+    font-size: 20px;
+    color: white;
+  }
+  
+  .footer .copyright {
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 480px) {
+    .footer {
+      flex-direction: column;
+      padding: 20px 10px;
+      gap: 15px;
+    }
+  
+    .footer .section {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer .section h3 {
+      font-size: 16px;
+    }
+  
+    .footer .section a {
+      font-size: 13px;
+    }
+  
+    .footer .social-icons {
+      gap: 10px;
+    }
+  
+    .footer .social-icons a {
+      font-size: 18px;
+    }
+  
+    .footer .copyright {
+      font-size: 10px;
+      margin-top: 15px;
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      padding: 30px 15px;
+      gap: 20px;
+    }
+  
+    .footer .section {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer .section h3 {
+      font-size: 17px;
+    }
+  
+    .footer .section a {
+      font-size: 14px;
+    }
+  
+    .footer .social-icons {
+      gap: 12px;
+    }
+  
+    .footer .social-icons a {
+      font-size: 19px;
+    }
+  
+    .footer .copyright {
+      font-size: 11px;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .footer {
+      padding: 35px 20px;
+      gap: 15px;
+    }
+  
+    .footer .section h3 {
+      font-size: 17px;
+    }
+  
+    .footer .section a {
+      font-size: 14px;
+    }
+  
+    .footer .socialicons a {
+      font-size: 20px;
+    }
+  
+    .footer .copyright {
+      font-size: 12px;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .footer {
+      padding: 40px 20px;
+      gap: 20px;
+    }
+  
+    .footer .section h3 {
+      font-size: 18px;
+    }
+  
+    .footer .section a {
+      font-size: 14px;
+    }
+  
+    .footer .social-icons a {
+      font-size: 20px;
+    }
+  }

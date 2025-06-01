@@ -1,0 +1,52 @@
+/*.containerBack{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}*/
+.background{
+    width: 100%;
+    position: relative;
+  height:calc(100vh); ;
+    background: darkgoldenrod;
+    overflow: hidden;
+
+ 
+}
+.background .bgdata{
+    width: 100%;
+    height: 100%;
+
+}
+.background .bgdata img{
+    width: 100%;
+height: 100%;
+    object-fit: cover;
+}
+.background  .bglayer{
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.6);
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.background .bgtext {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    color:white;
+    z-index: 999;
+    text-align: center;
+
+}
+
+.background .bgtext h1,p {
+
+ 
+    font-size: 2rem;
+    font-weight: 700;
+    color: whitesmoke;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}

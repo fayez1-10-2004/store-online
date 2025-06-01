@@ -1,0 +1,102 @@
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    
+}
+
+header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background: rgb(97, 84, 55);
+  
+}
+header nav div{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    
+}
+header nav div ul{
+    display:  flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 40px;
+}
+header nav div a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+header nav .big-menu{
+
+    width: 100%;
+    height: calc(100vh - 50px);
+    position: fixed;
+    top: 0;
+    left: 0;
+   background: #beb87e;
+    display: flex !important; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    z-index: 9999;
+padding-top: 100px;
+    opacity: 0;
+    animation: menu 1s ease-out forwards ;
+
+}
+
+@keyframes menu {
+    0% { opacity: 0; transform: translateX(-100px); } 
+    100% { opacity: 1; transform: translateX(0px); } 
+  }
+  
+
+
+header nav div ul .active{
+    padding: 10px;
+    background: #9fa752;
+    border-radius: 5px;
+    color: navy;
+    
+}
+a:hover{
+    color: navy;
+    }
+    
+
+    .cart{
+        position: relative;
+    }
+    .cartiocn{
+        font-size: 35px;
+        font-weight: 900;
+    }
+.counter{
+    color:darkred;
+    position: absolute;top: 7px;
+    right: 10px;
+}
+.button-log-in{
+    
+    color: white;
+    background: transparent;
+    border: none;
+    transition: 0.7s all ease;
+}
+.button-log-in:hover{
+
+    background:transparent;
+    border: none;
+color: navy;
+transform: scale(1.3);
+}
