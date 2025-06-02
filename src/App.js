@@ -13,7 +13,6 @@
 
 
     const App = () => {
-const [lodaing, setlodaing] = useState(true)
 const[featured,setfeatured]=useState([])
 const [cart, setCart] = useState(()=>{
 try{
@@ -44,7 +43,6 @@ console.error('set error',error);
             axios.get(`https://fakestoreapi.com/products`)
                 .then((res) => {
                     setproductfet(res.data)
-                    setlodaing(false)
                     const randomproduct=res.data.sort(()=>0.4-Math.random())
                     const top5=randomproduct.slice(0,4)
                     setfeatured(top5)

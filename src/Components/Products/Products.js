@@ -1,6 +1,5 @@
-import React, {  useState } from 'react'
+import React from 'react'
 import productsstyle from './Proudcts.module.css'
-import Lodaing from '../lodaing/Lodaing'
 import { useNavigate } from 'react-router-dom'
 
 function Proudcts({ setCart ,productfet ,Lodaing}) {

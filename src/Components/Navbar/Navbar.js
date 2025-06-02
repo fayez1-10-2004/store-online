@@ -1,6 +1,6 @@
-import React, { useState, useEffect, use } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Navabar.css'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { IoMdHome } from "react-icons/io";
 import { MdOutlineVisibility } from "react-icons/md"
 import { AiFillProduct } from "react-icons/ai";
@@ -9,7 +9,6 @@ import { IoIosMenu } from "react-icons/io";
 import { CgCloseO } from 'react-icons/cg';
 import { CiShoppingCart } from "react-icons/ci";
 import { IoMdLogIn } from "react-icons/io";
-import login from '../from/Form'
 function Navbar({ cartCount }) {
     const [menu, setmenu] = useState(window.innerWidth <= 850)
     const [menuIcon, setMenuIcon] = useState(window.innerWidth <= 550)
@@ -35,7 +34,6 @@ function Navbar({ cartCount }) {
         setbigmneu(!bigmenu)
         /* setbigmneu(!close)*/
     }
-    const counter = 0
     const navigate = useNavigate()
     useEffect(() => {
 

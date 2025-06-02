@@ -7,7 +7,6 @@ function Form() {
     const lastname = useRef()
     const emailinput = useRef()
     const phoneinput = useRef()
-    const [user, setuser] = useState(null)
     const [message, setmessage] = useState("")
 
 
@@ -18,7 +17,6 @@ function Form() {
         const storgeuser = localStorage.getItem('user')
         if (storgeuser) {
 
-            setuser(JSON.parse(storgeuser))
         }
 
     }, [])

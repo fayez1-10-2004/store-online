@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import cartstyle from './Cart.module.css'
 function Cart({ cart, setCart }) {
     const remove = (id) => {
         setCart(cart.filter((product) => product.id !== id));
     }
-
-    
-    
     return (
         <div className={cartstyle.cart}>
             <h1>cart</h1>

@@ -23,9 +23,9 @@ function Footer() {
                 <div className={footerStyle.section}>
                     <h3>تابعنا</h3>
                     <div className={footerStyle.socialicons}>
-                        <a href="https://facebook.com" target="_blank">FB</a>
-                        <a href="https://instagram.com" target="_blank">IG</a>
-                        <a href="https://twitter.com" target="_blank">TW</a>
+                        <a href="https://facebook.com" target="_blank" rel='noreferrer'>FB</a>
+                        <a href="https://instagram.com" target="_blank" rel='noreferrer'>IG</a>
+                        <a href="https://twitter.com" target="_blank" rel='noreferrer'>TW</a>
                     </div>
                 </div>
 
