@@ -39,7 +39,6 @@ function Form() {
 
 
                     localStorage.setItem('user', JSON.stringify(res.data.user))
-                    setuser(res.data.user)
                     setmessage('sucess login')
                     console.log(res.data.user)
                     fristname.current.value = ''
