@@ -1,0 +1,9 @@
+ul,a,ol{
+text-decoration: none;
+  list-style: none;
+  color: aliceblue;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+
