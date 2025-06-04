@@ -70,13 +70,7 @@ setactiuveIndex(null)
 
 <div >
 
-<div onClick={()=>toggle(1)}>
-{
 
-    actiuveIndex===1?'trend':'trend'
-}
- {actiuveIndex === 1&& <p >هذا هو المحتوى الأول.</p>}
-</div>
 
 </div>
             </section>
