@@ -82,7 +82,7 @@ className='span-drop-down'
                         <ul className={bigmenu ? 'big-menu' : undefined} style={menuIcon ? { display: bigmenu ? 'flex' : 'none' } : { display: 'flex' }}>
                             <li>
                                 <NavLink className={window.location.pathname === '/' || window.location.pathname === '/home' ? 'active' : undefined} to='/home'> {
-                                    menu ? bigmenu ? 'home' : undefined : ""
+                                    menu ? bigmenu ? 'home' : undefined : "home"
 
                                 } </NavLink>
                             </li>
