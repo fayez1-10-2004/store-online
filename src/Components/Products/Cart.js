@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import cartstyle from './Cart.module.css'
 function Cart({ cart, setCart }) {
 
@@ -7,12 +7,13 @@ function Cart({ cart, setCart }) {
     }
     const addproduct=(id)=>{
 
-        const updatecart=cart.map(
-            product=>{
+        const updatecart=cart.map( ((product,index) =>{
             if(product.id===id) {
                 return {...product,quantity:(product.quantity||1) + 1}
             }
-        }
+return product;
+            
+     } )
         )
 setCart(updatecart)
 
