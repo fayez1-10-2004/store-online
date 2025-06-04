@@ -7,7 +7,6 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIos } from "react-icons/md"
 const Background = (featured,setfeatured) => {
 const [cureentIndex,setcureentIndex]=useState(0)
-const [actiuveIndex,setactiuveIndex]=useState(null)
 const collect=[{
     image:bg1,
     descrption:'Get up to 50% off Today Only!',
@@ -36,15 +35,7 @@ const changeBackgroundles=()=>{
     setcureentIndex(lessindex)
 }
 
-const toggle=(index)=>{
-if(actiuveIndex===index){
 
-setactiuveIndex(null)
-
-}else {
-
-    setactiuveIndex(index)
-}  
 
 
 
@@ -68,11 +59,7 @@ setactiuveIndex(null)
 <button onClick={changeBackgroundles}><MdArrowForwardIos /></button>    
 </div>
 
-<div >
 
-
-
-</div>
             </section>
 
         </>
