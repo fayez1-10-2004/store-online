@@ -78,6 +78,7 @@ className='span-drop-down'
                 </div>
                 <div className='down-nav fixed'>
                     <div className='down-nav-1'><img src={LogoDark} alt='logo'/></div>
+                    
                     <div className='down-nav-2'>
                         <ul className={bigmenu ? 'big-menu' : undefined} style={menuIcon ? { display: bigmenu ? 'flex' : 'none' } : { display: 'flex' }}>
                             <li>
@@ -114,7 +115,18 @@ className='span-drop-down'
                                 <NavLink className={window.location.pathname === '/contact' ? 'active' : undefined} to='/contact'> 
                                     {menu ? bigmenu ? 'contact us' : undefined : " contcat us"}</NavLink>
                             </li>
-                            <div className='cart'>
+                            
+                            
+                        </ul>
+                        
+                        {
+                            menuIcon ?
+                                (bigmenu ? <CgCloseO size={25} cursor={"pointer"} onClick={() => changeMenu()} /> :
+                                    <IoIosMenu onClick={() => changeMenu()} size={25} cursor={'pointer'} />) :
+                                bigmenu ? <CgCloseO size={25} cursor={"pointer"} onClick={() => changeMenu()} /> : undefined
+                        }
+                    </div>
+                    <div className='cart'>
                                 <div className="carticon">
                                     <CiSearch  color='black' size={25}/>
                                 </div>
@@ -125,15 +137,6 @@ className='span-drop-down'
                                     <span className='counter'>{cartCount}</span>
                                 </div>
                             </div>
-                            
-                        </ul>
-                        {
-                            menuIcon ?
-                                (bigmenu ? <CgCloseO size={25} cursor={"pointer"} onClick={() => changeMenu()} /> :
-                                    <IoIosMenu onClick={() => changeMenu()} size={25} cursor={'pointer'} />) :
-                                bigmenu ? <CgCloseO size={25} cursor={"pointer"} onClick={() => changeMenu()} /> : undefined
-                        }
-                    </div>
                     </div>
                 </nav>
             </header>

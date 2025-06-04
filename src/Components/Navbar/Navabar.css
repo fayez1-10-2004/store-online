@@ -1,15 +1,13 @@
 header{
     width: 100%;
-    
 
     font-family:'Poppins', sans-serif;;
 }
 
 header nav{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    width: 100%;
+
+   
     
     background: #fff;
     gap: 5px;
@@ -87,38 +85,40 @@ header nav .fixed{
 }
 header nav .down-nav ul{
     display:  flex; 
-    justify-content:space-between;
     align-items: center;
-    gap: 40px;
-
+    justify-content: center;
+    gap: 35px;
+    
 }
-header nav .down-nav a{
+header nav ul a{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2px;
-    color: black;
+    color: rgb(0, 0, 0);
     font-size: 14px;
     font-weight: 500;
+   
 }
 header nav .down-nav a:hover{
     color: #ff324d;
 }
 header nav .big-menu{
-    width: 100%;
-    height: calc(100vh);
-   background: #e7e7d4;
-    display: flex !important; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin-top: 60px;
-    padding-top: 100px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999999;
+position: fixed;
+top: 0;
+left: 0;
+    background: #f9f2f2;
+    width:  100%;
+ height: 100vh;
+   background: #dededa;
+   gap: 50px !important;
+   margin-top: 70px;
+   display: flex !important; 
+   justify-content: center !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 20px 40px;
     animation: menu 1s ease-out forwards ;
 
 }
@@ -131,7 +131,7 @@ header nav .big-menu{
 
 
 header nav div ul .active{
-    padding: 10px;
+
     color: #ff324d;
     
 }
