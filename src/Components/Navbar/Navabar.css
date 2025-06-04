@@ -106,28 +106,28 @@ header nav .down-nav a:hover{
 }
 header nav .big-menu{
     width: 100%;
-    height: calc(100vh - 50px);
-   background: #beb87e;
+    height: calc(100vh);
+   background: #e7e7d4;
     display: flex !important; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin-top: 50px;
-    z-index: 9999;
-padding-top: 100px;
-position: sticky;
-top: 0;
-    opacity: 0;
+    margin-top: 60px;
+    padding-top: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
     animation: menu 1s ease-out forwards ;
 
 }
 
-/*@keyframes menu {
+@keyframes menu {
     0% { opacity: 0; transform: translateX(-100px); } 
     100% { opacity: 1; transform: translateX(0px); } 
   }
-  */
+  
 
 
 header nav div ul .active{

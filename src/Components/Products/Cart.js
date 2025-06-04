@@ -9,7 +9,7 @@ function Cart({ cart, setCart }) {
 
         const updatecart=cart.map( ((product,index) =>{
             if(product.id===id) {
-                return {...product,quantity:(product.quantity||1) + 1}
+                return {...product,quantity:(product.quantity||0) + 1}
             }
 return product;
             
@@ -33,7 +33,7 @@ console.log('welcome')
                     <div>
                     <button className={cartstyle.button} onClick={() => remove(product.id)}>del</button>
                 
-                        <span>{product.quantity|1}</span>
+                        <span>{product.quantity|0}</span>
                         <button onClick={()=>addproduct(product.id)}>++</button>
                 </div>
                 </div>

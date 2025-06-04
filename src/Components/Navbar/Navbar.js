@@ -20,19 +20,12 @@
            { label:'united state',image:us
         },]
         const [menu, setmenu] = useState(window.innerWidth <= 850)
-        const [menuIcon, setMenuIcon] = useState(window.innerWidth <= 550)
+        const [menuIcon, setMenuIcon] = useState(window.innerWidth <= 849)
         const checkwindow = (size) => {
             setmenu(size <= 850);
-            setMenuIcon(size <= 550);
+            setMenuIcon(size <= 849);
 
         }
-
-        
-        
-        
-
-
-
         const [bigmenu, setbigmneu] = useState(false)
         /* const [close, setClose] = useState(false)*/
         const changeMenu = () => {
@@ -41,14 +34,8 @@
         }
         const navigate = useNavigate()
         useEffect(() => {
-
-
             const handleResize = () => {
-
-
                 checkwindow(window.innerWidth);
-
-
             }
             window.addEventListener('resize', handleResize);
             return () => window.removeEventListener('resize', handleResize);
@@ -56,40 +43,28 @@
 
         /*<button onClick={formhandle} className='button-log-in'><IoMdLogIn size={25} cursor={'pointer'} /></button>*/
         const handledropdown=()=>{
-
-
-    
-
         setopenDropDown(!openDropDown)
-  
         }
         const handleoptionselect=(option)=>{
 setselectOption(option)
 setopenDropDown(false)
-
-
         }
         return (
         
             <header>
                 <nav>
-
-
                 <div className='top-nav fixed'>
     <div className='top-nav-right'>
-        
     <button className='drop-down' onClick={handledropdown} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
   <img src={options.find(opt => opt.label === selectOption)?.image} alt={selectOption} style={{ width: '20px', height: '20px' }} />
   {selectOption}
   <span><FaAngleDown  color='#ccced1'/></span>
 </button>
-
     {openDropDown?
     <div className='box-drop-down'>
         {options.map((option,index) =>(
         <span key={index} onClick={()=> handleoptionselect(option.label)}
 className='span-drop-down'
-    
         >
             <img src={option.image} alt={option.label}style={{ width: '20px', height: '20px' }}  />
             {option.label}
@@ -97,14 +72,9 @@ className='span-drop-down'
         ) 
         )}
     </div>:undefined
-    
     }
-        
-        
-        
         </div>    
     <div className='top-nav-left'>welcome</div>
-                    
                 </div>
                 <div className='down-nav fixed'>
                     <div className='down-nav-1'><img src={LogoDark} alt='logo'/></div>
@@ -112,18 +82,22 @@ className='span-drop-down'
                         <ul className={bigmenu ? 'big-menu' : undefined} style={menuIcon ? { display: bigmenu ? 'flex' : 'none' } : { display: 'flex' }}>
                             <li>
                                 <NavLink className={window.location.pathname === '/' || window.location.pathname === '/home' ? 'active' : undefined} to='/home'> {
-                                    menu ? bigmenu ? 'home' : undefined : "home"
+                                    menu ? bigmenu ? 'home' : undefined : ""
 
                                 } </NavLink>
                             </li>
                             <li>
                                 <NavLink className={window.location.pathname === '/about' ? 'active' : undefined} to='/about' >
+                                
                                     {menu ? bigmenu ? 'about' : undefined : "about"}
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink className={window.location.pathname === '/products' ? 'active' : undefined} to='/products'> {
-                                    menu ? bigmenu ? 'products' : undefined : "products"
+                                <NavLink className={window.location.pathname === '/products' ? 'active' : undefined} to='/products'> 
+                               
+                                
+                                 {
+                                    menu ? bigmenu ? 'products' : undefined : " products"
                                 }</NavLink>
                             </li>
                             <li>
@@ -138,7 +112,7 @@ className='span-drop-down'
                             </li>
                             <li>
                                 <NavLink className={window.location.pathname === '/contact' ? 'active' : undefined} to='/contact'> 
-                                    {menu ? bigmenu ? 'contact us' : undefined : "contact us"}</NavLink>
+                                    {menu ? bigmenu ? 'contact us' : undefined : " contcat us"}</NavLink>
                             </li>
                             <div className='cart'>
                                 <div className="carticon">
