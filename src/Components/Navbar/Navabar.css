@@ -10,11 +10,7 @@ header nav{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
-    top: 0px;
-    z-index: 9999;
-    left: 0;
-    right: 0;
+    
     background: #fff;
     gap: 5px;
     
@@ -24,6 +20,7 @@ header nav .top-nav{
     width: 100%;
     border-bottom: 1px solid #ccced1;
     height: 40px;
+    position: static !important;
     position: relative;
 }
 header nav .top-nav-right .drop-down {
@@ -31,6 +28,7 @@ header nav .top-nav-right .drop-down {
     background: transparent;
     border: none;
     outline: none;
+
 }
 
 header nav .top-nav-right .box-drop-down {
@@ -65,9 +63,15 @@ header nav .down-nav
 {
     width: 100%;
     height: 70px;
-    
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+    left: 0;
+    right: 0;
     gap: 40px;
+    background: #fff;
     text-transform: uppercase;
+    
      
     
 }
