@@ -4,7 +4,6 @@
     import { IoIosMenu } from "react-icons/io";
     import { CgCloseO } from 'react-icons/cg';
     import { CiShoppingCart } from "react-icons/ci";
-    import { IoMdLogIn } from "react-icons/io";
     import { CiSearch } from "react-icons/ci"
     import { FaAngleDown } from "react-icons/fa6";
     import LogoDark from '../../images/logo_dark.png'
@@ -30,11 +29,7 @@
         }
 
         
-        const formhandle = () => {
-
-
-            navigate('/Form')
-        }
+        
         
 
 
