@@ -14,7 +14,6 @@
         const [openDropDown,setopenDropDown]=useState(false)
         const [selectOption,setselectOption]=useState('english')
         const options=[{
-
             label: 'english',image:en,}
 ,
         {label:'france',image:fn,},
@@ -118,8 +117,8 @@ className='span-drop-down'
                                 } </NavLink>
                             </li>
                             <li>
-                                <NavLink className={window.location.pathname === '/' ? 'active' : undefined} to='/' >
-                                    {menu ? bigmenu ? 'pages' : undefined : "pages"}
+                                <NavLink className={window.location.pathname === '/about' ? 'active' : undefined} to='/about' >
+                                    {menu ? bigmenu ? 'about' : undefined : "about"}
                                 </NavLink>
                             </li>
                             <li>
