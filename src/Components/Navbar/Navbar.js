@@ -108,7 +108,7 @@ className='span-drop-down'
                     
                 </div>
                 <div className='down-nav fixed'>
-                    <div className='down-nav-1'><img src={LogoDark}/></div>
+                    <div className='down-nav-1'><img src={LogoDark} alt='logo'/></div>
                     <div className='down-nav-2'>
                         <ul className={bigmenu ? 'big-menu' : undefined} style={menuIcon ? { display: bigmenu ? 'flex' : 'none' } : { display: 'flex' }}>
                             <li>
