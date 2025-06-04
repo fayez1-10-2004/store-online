@@ -5,15 +5,13 @@ import Singlestyle from './SingleProducts.module.css'
 function SingleProduct() {
     const [product, setProduct] = useState({})
     const { welcome } = useParams()
+
+
     useEffect(() => {
 
         axios.get(`https://fakestoreapi.com/products/${welcome}`)
             .then((res) => setProduct(res.data))
             .catch((err) => console.log(err))
-
-
-
-
     })
     return (
 
