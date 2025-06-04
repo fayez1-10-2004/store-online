@@ -35,12 +35,7 @@ const changeBackgroundles=()=>{
     setcureentIndex(lessindex)
 }
 
-
-
-
-
-}
-    return (
+ return (
         <>
             <section className={bgstyle.background}>
 
