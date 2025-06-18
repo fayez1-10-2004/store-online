@@ -11,6 +11,7 @@
     import fn from '../../images/fn.png'
     import us from '../../images/us.png'
     function Navbar({ cartCount }) {
+
         const [openDropDown,setopenDropDown]=useState(false)
         const [selectOption,setselectOption]=useState('english')
         const options=[{
@@ -21,6 +22,7 @@
         },]
         const [menu, setmenu] = useState(window.innerWidth <= 850)
         const [menuIcon, setMenuIcon] = useState(window.innerWidth <= 849)
+        const [scroll,setscroll]=useState(window.scrollY)
         const checkwindow = (size) => {
             setmenu(size <= 850);
             setMenuIcon(size <= 849);
@@ -37,9 +39,17 @@
             const handleResize = () => {
                 checkwindow(window.innerWidth);
             }
+            
             window.addEventListener('resize', handleResize);
             return () => window.removeEventListener('resize', handleResize);
         },);
+        useEffect(()=>{
+const hanldescroll=()=>{
+setscroll(window.scrollY)
+            }
+            window.addEventListener('scroll', hanldescroll);
+            return () => window.removeEventListener('scroll', hanldescroll);
+        },[])
 
         /*<button onClick={formhandle} className='button-log-in'><IoMdLogIn size={25} cursor={'pointer'} /></button>*/
         const handledropdown=()=>{
@@ -53,15 +63,15 @@ setopenDropDown(false)
         
             <header>
                 <nav>
-                <div className='top-nav fixed'>
+                <div className='top-nav'>
     <div className='top-nav-right'>
-    <button className='drop-down' onClick={handledropdown} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-  <img src={options.find(opt => opt.label === selectOption)?.image} alt={selectOption} style={{ width: '20px', height: '20px' }} />
+    <button className='drop-down' onClick={handledropdown}  style={{ display: 'flex', alignItems: 'center', gap: '8px', }}>
+  <img src={options.find(opt => opt.label === selectOption)?.image} alt={selectOption} style={{ width: '20px', height: '20px', }} className='img-dropdow' />
   {selectOption}
   <span><FaAngleDown  color='#ccced1'/></span>
 </button>
     {openDropDown?
-    <div className='box-drop-down'>
+    <div className='box-drop-down' >
         {options.map((option,index) =>(
         <span key={index} onClick={()=> handleoptionselect(option.label)}
 className='span-drop-down'
@@ -76,7 +86,7 @@ className='span-drop-down'
         </div>    
     <div className='top-nav-left'>welcome</div>
                 </div>
-                <div className='down-nav fixed'>
+                <div className='down-nav'  style={{top:scroll>=1?"0px":undefined}}>
                     <div className='down-nav-1'><img src={LogoDark} alt='logo'/></div>
                     
                     <div className='down-nav-2'>

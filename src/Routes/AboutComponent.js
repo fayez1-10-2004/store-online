@@ -6,13 +6,9 @@ import Footer from '../Components/footer/Footer'
 function AboutComponent() {
     return (
         <>
-
-
-            <Navbar />
             <About />
             <Footer />
         </>
     )
 }
-
 export default AboutComponent

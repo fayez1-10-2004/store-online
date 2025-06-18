@@ -11,8 +11,8 @@
     import FormComponent from "./Routes/FormComponent";
     import axios from 'axios'
 
-
     const App = () => {
+  const [categories, setCategories] = useState([]);
 const[featured,setfeatured]=useState([])
 const [cart, setCart] = useState(()=>{
 try{
@@ -45,22 +45,24 @@ console.error('set error',error);
                     setproductfet(res.data)
                     const randomproduct=res.data.sort(()=>0.4-Math.random())
                     const top5=randomproduct.slice(0,4)
+                    const uniqueCategories=[...new Set(res.data.map(product=>product.category))]
+                    setCategories(uniqueCategories)
                     setfeatured(top5)
+                    console.log('ssss',productfet)
                 })
                 .catch((err) => console.log(err))
         }, [])
 
     
         
-    console.log(featured)
         return (
             <>
                 <Navbar cartCount={cart.length} />
                 <Routes>
-                    <Route path="/" element={<HomeComponent  featured={featured}/>} />
-                    <Route path="/Home" element={<HomeComponent featured={featured} />} />
+                    <Route path="/" element={<HomeComponent  featured={featured}  categories={categories}  productfet={productfet} />} />
+                    <Route path="/Home" element={<HomeComponent featured={featured}  categories={categories} productfet={productfet}  />} />
                     <Route path="/about" element={<AboutComponent />} />
-                    <Route path="/products" element={<ProductsComponent setCart={setCart} setfeatured={setfeatured}  productfet={productfet} />} />
+                    <Route path="/products" element={<ProductsComponent setCart={setCart}   productfet={productfet} />} />
                     <Route path="/contact" element={<ContactComponent />} />
                     <Route path="/products/:welcome" element={<SingleProduct />} />
                     <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
@@ -69,5 +71,4 @@ console.error('set error',error);
             </>
         );
     };
-
     export default App;

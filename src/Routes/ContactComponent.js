@@ -8,7 +8,6 @@ function ContactComponent() {
 
         <>
 
-            <Navbar />
             <Contact />
             <Footer/>
         </>

@@ -4,7 +4,6 @@ import Form from '../Components/from/Form'
 function FormComponent() {
     return (
         <>
-
             <Form />
         </>
     )

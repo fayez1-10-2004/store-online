@@ -1,18 +1,16 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Background from '../Components/Home/Background'
 import Spicalproduct from '../Components/Home/Spicalproduct'
 
-const HomeComponent = ({featured}) => {
+const HomeComponent = ({featured,productfet}) => {
 
-    console.log('aleready',featured)
+console.log('aleed',productfet)
     return (
         <>
 
 
-            <Navbar />
             <Background />
-            <Spicalproduct featured={featured} />
+            <Spicalproduct featured={featured} productfet={productfet} />
         </>
     )
 }

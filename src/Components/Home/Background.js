@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import bgstyle from './Background.module.css'
 import bg2 from '../../images/banner1.jpg';
 import bg1 from '../../images/banner2.jpg'
@@ -7,7 +8,8 @@ import mid1 from '../../images/mid-img-1.jpg'
 import mid2 from '../../images/mid_img-2.jpg'
 import { MdArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIos } from "react-icons/md"
-const Background = (featured,setfeatured) => {
+const Background = ()=> {
+    const navigate=useNavigate()
 const [cureentIndex,setcureentIndex]=useState(0)
 const collect=[{
     image:bg1,
@@ -49,7 +51,7 @@ const changeBackgroundles=()=>{
                 <div className={bgstyle.bgtext}>
                     <h1>{collect[cureentIndex].title}</h1>
                     <p>{collect[cureentIndex].descrption}</p>
-                    <button>SHOP NOW</button>
+                    <button onClick={()=>navigate('/products')} >SHOP NOW</button>
                 </div>
                 <div className={bgstyle.button}>
  <button onClick={changeBackgroundnex}><MdArrowBackIos /></button>
@@ -71,7 +73,7 @@ const changeBackgroundles=()=>{
         <div className={bgstyle.textImageMid2}>
             <p>New Season</p>
             <h1>Sale 40% Off</h1>
-            <button>SHop Now</button>
+            <button onClick={()=>navigate('/products')}>SHop Now</button>
         </div>
     </div>
 

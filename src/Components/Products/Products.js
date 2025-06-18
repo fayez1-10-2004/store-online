@@ -12,8 +12,6 @@ function Proudcts({ setCart ,productfet ,Lodaing}) {
 /*   هنا عشن ميكررش المنتج*/ 
 setCart(prevCart => {
     if(prevCart.find(item=>item.id===el.id)){
-        
-        
         return prevCart
         
     }
