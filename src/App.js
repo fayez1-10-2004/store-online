@@ -51,7 +51,7 @@ console.error('set error',error);
                     console.log('ssss',productfet)
                 })
                 .catch((err) => console.log(err))
-        },)
+        },[])
 
     
         
