@@ -48,7 +48,6 @@ console.error('set error',error);
                     const uniqueCategories=[...new Set(res.data.map(product=>product.category))]
                     setCategories(uniqueCategories)
                     setfeatured(top5)
-                    console.log('ssss',productfet)
                 })
                 .catch((err) => console.log(err))
         },[])
