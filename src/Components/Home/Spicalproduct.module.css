@@ -28,12 +28,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 30px; padding: 40px 20px;
+
 }
 
 /* --- الكارد الواحد --- */
 .cart {
-  width: 290px;
+  width: 250px;
   height: auto;
   background-color: #fff;
   border: 1px solid #e9e9e9;
@@ -44,7 +45,6 @@
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .cart:hover {
@@ -55,27 +55,26 @@
 
 /* --- منطقة الصورة --- */
 .imagecontainer {
-  position: relative;
   width: 100%;
   height: 280px;
   overflow: hidden;
   padding: 20px;
+  position: relative;
   box-sizing: border-box;
   background-color: #fafafa;
 }
 
 .imagecontainer img {
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: contain;
   transition: transform 0.4s ease;
 }
 
-.cart:hover .imagecontainer img {
-  transform: scale(1.08);
-}
 
-/* --- شارة الخصم --- */
+
+/*-  الخصم - */
 .cart::before {
   content: "Sale";
   position: absolute;
@@ -94,29 +93,20 @@
 /* --- أيقونات الإجراءات على الجانب الأيمن --- */
 .overlay {
   position: absolute;
-  top: 20px;
-  right: -60px; /* تبدأ خارج الإطار من اليمين */
+  top: 50%;
+  left: 30px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  opacity: 0;
+  gap: 15px;
+  opacity: 1;
   transition: all 0.4s ease;
   z-index: 2;
 }
-
-.cart:hover .overlay {
-  right: 15px; /* تنزلق إلى الداخل */
-  opacity: 1;
-}
-
 .overlay button {
   background: white;
   border: 1px solid #e9e9e9;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 16px;
-  cursor: pointer;
+  width: 37px;
+  height: 37px;
+  cursor: pointer;    
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,32 +123,33 @@
 
 /* تأثير تأخير ظهور الأزرار */
 .cart:hover .overlay button:nth-child(1) { transition-delay: 0.1s; }
-.cart:hover .overlay button:nth-child(2) { transition-delay: 0.15s; }
+.cart:hover .overlay button:nth-child(2) { transition-delay: 0.1s; }
 .cart:hover .overlay button:nth-child(3) { transition-delay: 0.2s; }
+.cart:hover .overlay button:nth-child(4) { transition-delay: 0.3s; }
 
 .overlay button:hover {
   background-color: #ff324d;
   color: white;
   border-color: #ff324d;
-  transform: scale(1.1);
 }
 
 /* --- منطقة المعلومات --- */
-.cart h2, .cart p {
+.cart h3,h2, .cart p {
   padding: 0 20px;
   text-align: left;
   margin: 0;
 }
 
-/* إضافة تصنيف المنتج (سنستخدم ::after للمحاكاة) */
-.cart h2::before {
-  content: "Electronics"; /* يمكنك تغييرها حسب التصنيف */
-  display: block;
-  font-size: 12px;
-  color: #666;
-  font-weight: 400;
-  text-transform: capitalize;
-  margin-bottom: 5px;
+.cart h3{
+color: #ff324d;
+ font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+  line-height: 1.4;
+
 }
 
 .cart h2 {
@@ -198,9 +189,8 @@
   cursor: pointer;
   padding: 12px 24px;
   margin: 0 8px 30px;
-  border: 2px solid #e9e9e9;
-  background-color: white;
-  border-radius: 25px;
+  border: none;
+  background-color: transparent;
   transition: all 0.3s ease;
   font-weight: 600;
   color: #333;
@@ -209,8 +199,173 @@
 
 .FTbutton:hover,
 .FTbutton.active {
-  background-color: #ff324d;
-  color: white;
+
+  color: rgb(255, 0, 0);
   border-color: #ff324d;
   transform: translateX(-2px);
+}
+.layout{
+position: absolute;
+  width: 100%;
+  height: 280px;
+  background: #00000034;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+.cart:hover .layout{
+  opacity: 1;
+}
+/*tranding style*/
+.tranding{
+  margin-top: 50px;
+width: 100%;
+background: #f4f9fc;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+
+}
+.tranding .textTranding{
+
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.tranding p{
+  color: #ff324d;
+  font-size: 17px;
+}
+.tranding button{
+width:130px;
+    background:#ff324d;
+    border: none;
+    outline: none;
+    padding: 16px 0px;
+    color: white;
+    position: relative;
+cursor: pointer;
+transition: 0.5s all ease;
+border:  1px solid #ff324d;
+
+}
+.tranding button:hover{
+    color:#ff324d;
+    background: transparent;
+
+}
+
+
+.containerCleint{
+width: 100%;
+height: 400px;
+  background: #fff1f1;
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 20px;
+position: relative;
+}
+
+
+.containerCleint .DataClient{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+}
+.containerCleint h1{
+  color: #292b2c;
+}
+.containerCleint span{
+  
+  color: #a6a6b3;
+}
+.containerCleint h4{
+
+  color: #000;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+  .containerCleint p{
+    color: #ff324d;
+    font-size: 17px;
+  }
+
+  .arrowClient{
+width: 50%
+;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: absolute;
+top: 60%;
+left:400px;
+
+  }
+  .support{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 40px;
+    
+  }
+  .support div{
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 20px;
+
+  }
+  .border{
+padding:0 70px ;
+
+    border-left: 2px solid rgb(201, 199, 199);
+    border-right: 2px solid rgb(201, 199, 199);
+  }
+.support span{
+  color: #858c9e;
+}
+.support h2{
+
+  color: #1e1f20;
+}
+.subscribe{
+  margin-top: 50px;
+  width: 100%;
+  height: 150px;
+  background: #ff324d;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.subscribe h1{
+
+
+  color: white;
+}
+.subscribe form input{
+width: 400px;
+padding: 19px;
+border: none;
+
+
+
+}
+.subscribe form button{
+
+width: 150px;
+padding: 19px;
+border: none;
+background: #212529;
+color: white;
+cursor: pointer;
+font-size: 16px;
 }

@@ -31,7 +31,6 @@ const collect=[{
 const changeBackgroundnex=()=>{
 const nextIndex=(cureentIndex+1)%collect.length
 setcureentIndex(nextIndex)
-console.log(cureentIndex)
 }
 const changeBackgroundles=()=>{
 
