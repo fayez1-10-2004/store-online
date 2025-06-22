@@ -322,7 +322,7 @@ womenProduct.map((el,id)=>(
 
     </div>
     
-</div>
+</div>  
 
 
 
