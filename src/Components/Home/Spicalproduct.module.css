@@ -369,3 +369,159 @@ color: white;
 cursor: pointer;
 font-size: 16px;
 }
+@media (max-width: 768px) {
+  .spicalcart {
+    padding-top: 60px;
+    gap: 30px;
+  }
+
+  .trend {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .carts {
+    gap: 20px;
+    padding: 20px 10px;
+    justify-content: center;
+  }
+
+  .cart {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .overlay {
+    left: 10px;
+    gap: 10px;
+  }
+
+  .overlay button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .tranding {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .tranding .textTranding {
+    align-items: center;
+  }
+
+  .tranding button {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .containerCleint {
+    height: auto;
+    padding: 20px;
+  }
+
+  .containerCleint .DataClient {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .arrowClient {
+    width: 90%;
+    left: 5%;
+    top: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .support {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .border {
+    border: none;
+    padding: 0;
+  }
+
+  .subscribe {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .subscribe form input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .subscribe form button {
+    width: 100%;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .imagecontainer {
+    height: 200px;
+    padding: 10px;
+  }
+
+  .cart h2, .cart h3, .cart p {
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  .trend {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .FTbutton {
+    padding: 10px 16px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .overlay {
+    gap: 8px;
+    left: 5px;
+  }
+
+  .overlay button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tranding button {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+
+  .containerCleint h1 {
+    font-size: 20px;
+  }
+
+  .subscribe h1 {
+    font-size: 20px;
+  }
+
+  .subscribe form input {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+  .subscribe form button {
+    font-size: 14px;
+    padding: 14px;
+  }
+}
