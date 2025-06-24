@@ -63,19 +63,16 @@
 
 /* --- كارد المنتج --- */
 .productCard {
-  width: 280px;
-  height: auto  ;
-  background: #fff;
+ width: 250px;
+  height: auto;
+  background-color: #fff;
   border: 1px solid #e9e9e9;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 10px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
@@ -155,7 +152,6 @@
   height: 35px;
   background: rgba(255, 255, 255, 0.9);
   border: none;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -271,5 +267,232 @@
   .productsGrid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+  }
+}
+.quickViewOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.quickViewContent {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 1000px;
+  width: 100%;
+  height: 700px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  position: relative;
+  display: flex ;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  animation: fadeIn 0.3s ease;
+}
+
+.quickViewModal {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+}
+
+.quickViewLeft {
+  flex: 1;
+  max-width: 350px;
+}
+
+.quickViewMainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain ;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.quickViewThumbnails {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.quickViewThumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.activeThumb {
+  border-color: #e91e63;
+}
+
+.quickViewRight {
+  flex: 2;
+  min-width: 280px;
+  
+  height: 8 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.priceRatingRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 15px;
+  flex-wrap: wrap;
+}
+
+.productDesc {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.productFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.productFeatures li {
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.optionsRow {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 15px;
+}
+.colorsRow{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+.colorsRow span,
+.sizesRow span {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.colorCircle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.activeColor {
+  border-color: #e91e63;
+}
+
+.sizeBtn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.activeSize {
+  background: #e91e63;
+  color: white;
+  border-color: #e91e63;
+}
+
+.addToCartRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.qtyBtn {
+  background: #f1f1f1;
+  border: none;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.qtyInput {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.addToCartBtn {
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.addToCartBtn:hover {
+  background: #c2185b;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 18px;
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.closeBtn:hover {
+  background: #c2185b;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
