@@ -10,11 +10,11 @@ function Footer() {
                     <h2 className={footerStyle.logo}>Shopwise</h2>
                     <p>If you are going to use of Lorem Ipsum need to be sure there isn't hidden of text</p>
                     <div className={footerStyle.socialicons}>
-                        <a href="#"><FaTwitter /></a>
-                        <a href="#"><FaFacebookF /></a>
-                        <a href="#"><FaGooglePlusG /></a>
-                        <a href="#"><FaYoutube /></a>
-                        <a href="#"><FaInstagram /></a>
+                        <a href="#g"><FaTwitter /></a>
+                        <a href="#g"><FaFacebookF /></a>
+                        <a href="#g"><FaGooglePlusG /></a>
+                        <a href="#g"><FaYoutube /></a>
+                        <a href="#g"><FaInstagram /></a>
                     </div>
                 </div>
 
