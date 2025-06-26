@@ -1,7 +1,11 @@
 import React from 'react';
 import footerStyle from './Footer.module.css';
 import { FaFacebookF, FaInstagram, FaYoutube, FaGooglePlusG, FaTwitter } from 'react-icons/fa6';
-
+import visa from '../../images/visa.png'
+import paypol from '../../images/paypal.png'
+import mastercard from '../../images/master_card.png'
+import amarican from '../../images/amarican_express.png'
+import discover from '../../images/discover.png'
 function Footer() {
     return (
         <section className={footerStyle.containerFooter}>
@@ -47,20 +51,20 @@ function Footer() {
 
                 <div className={footerStyle.section}>
                     <h3>Contact Info</h3>
-                    <p>123 Street, Old Trafford, New<br />South London, UK</p>
-                    <p>Email: info@sitename.com</p>
-                    <p>Phone: +457 789 789 65</p>
+                    <p>qina</p>
+                    <p>Email:fayz5575@gmail.com</p>
+                    <p>Phone:01117636138</p>
                 </div>
             </footer>
 
             <div className={footerStyle.footerBottom}>
                 <p>© 2025 All Rights Reserved by alhwary</p>
                 <div className={footerStyle.paymentMethods}>
-                    <img src="/images/payments/visa.png" alt="Visa" className={footerStyle.paymentIcon} />
-                    <img src="/images/payments/discover.png" alt="Discover" className={footerStyle.paymentIcon} />
-                    <img src="/images/payments/mastercard.png" alt="MasterCard" className={footerStyle.paymentIcon} />
-                    <img src="/images/payments/paypal.png" alt="PayPal" className={footerStyle.paymentIcon} />
-                    <img src="/images/payments/amex.png" alt="American Express" className={footerStyle.paymentIcon} />
+                    <img src={visa} alt="Visa" className={footerStyle.paymentIcon} />
+                    <img src={amarican} alt="Discover" className={footerStyle.paymentIcon} />
+                    <img src={mastercard} alt="MasterCard" className={footerStyle.paymentIcon} />
+                    <img src={paypol} alt="PayPal" className={footerStyle.paymentIcon} />
+                    <img src={discover} alt="American Express" className={footerStyle.paymentIcon} />
                 </div>
             </div>
         </section>

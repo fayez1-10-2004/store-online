@@ -25,38 +25,66 @@ height: 500px;
 
 
 .background .bgtext {
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideInLeft 1s ease-out forwards;
+  opacity: 0;
+}
+  @keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.background .bgtext h1,p {
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform:capitalize;
-}
-.background .bgtext button{
-    
-    width:150px;
-    background:#ff324d;
-    border: none;
-    outline: none;
-    padding: 18px 40px;
-    color: white;
-    position: relative;
-cursor: pointer;
-transition: 0.5s all ease;
-border:  1px solid #ff324d;
+
+.background .bgtext h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  animation: slideInLeft 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 
-.background .bgtext button:hover{
-    color:#ff324d;
-    background: transparent;
-
+.background .bgtext p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  animation: slideInLeft 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
 }
+
+.background .bgtext button {
+  width: 150px;
+  background: #ff324d;
+  border: none;
+  outline: none;
+  padding: 18px 40px;
+  color: white;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s all ease;
+  border: 1px solid #ff324d;
+
+  animation: slideInLeft 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
+.background .bgtext button:hover {
+  color: #ff324d;
+  background: transparent;
+}
+
 
 .button{
 
@@ -118,6 +146,7 @@ border:  1px solid #ff324d;
 
     color: crimson;
 }
+
 
 @media (min-width: 768px) and (max-width: 1100px) {
   .background {

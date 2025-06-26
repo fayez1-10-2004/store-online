@@ -286,7 +286,6 @@ function ShopwiseProducts({ productfet, setCart, Loading }) {
     <div className={styles.quickViewContent}>
       <button className={styles.closeBtn} onClick={() => setQuickViewProduct(null)}>×</button>
       <div className={styles.quickViewModal}>
-        {/* يسار: صورة المنتج وصور مصغرة */}
         <div className={styles.quickViewLeft}>
           <img
             src={quickViewProduct.selectedImage || quickViewProduct.image}
@@ -305,7 +304,6 @@ function ShopwiseProducts({ productfet, setCart, Loading }) {
             ))}
           </div>
         </div>
-        {/* يمين: تفاصيل المنتج */}
         <div className={styles.quickViewRight}>
           <h2 className={styles.productTitle}>{quickViewProduct.title}</h2>
           <div style={{display: 'flex', alignItems: 'center', gap: 10, margin: '6px 0 15px'}}>

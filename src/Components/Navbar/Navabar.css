@@ -6,64 +6,15 @@ header {
 header nav {
   width: 100%;
   background: #fff;
-  gap: 5px;
 }
 
-header nav .top-nav {
-    width: 100%;
-  border-bottom: 1px solid #ccced1;
-  height: 40px;
-  position: static;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10px;
-  background: #fff; 
-  margin-top: 0; 
-  padding-top: 0; 
-}
 
-header nav .top-nav-right .drop-down {
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  outline: none;
-  z-index: 9999;
-}
-
-header nav .top-nav-right .box-drop-down {
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  padding: 10px;
-  gap: 20px;
-  width: 150px;
-  height: 130px;
-  background: #ffff;
-  font-size: 16px;
-  text-shadow: none;
-  position: absolute;
-  top: 35px;
-  border: 1px solid #ccced1;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-header nav .top-nav-right .box-drop-down .span-drop-down {
-  cursor: pointer;
-  display: flex;
-  padding: 5px;
-  gap: 10px;
-}
 
 header nav .down-nav {
  width: 100%;
   height: 70px;
   position: fixed;
-  top: 40px;
+  top: 0px;
   left: 0;
   z-index: 99;
   background: #fff;
@@ -166,4 +117,87 @@ header nav div ul .active {
   border: none;
   color: navy;
   transform: scale(1.3);
+}
+.mini-cart-box {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  width: 280px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.mini-cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.mini-cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.mini-title {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.mini-price {
+  font-size: 13px;
+  color: #666;
+  margin: 4px 0 0;
+}
+
+.mini-cart-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.mini-cart-btn:hover {
+  background-color: #444;
+}
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.qty-controls button {
+  width: 24px;
+  height: 24px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.qty-controls button:hover {
+  background-color: #ff324d;
+  color: white;
+  border-color: #ff324d;
+}
+
+.qty-controls span {
+  min-width: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
 }

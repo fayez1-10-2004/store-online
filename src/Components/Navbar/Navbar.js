@@ -1,7 +1,6 @@
-// Navbar.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Navabar.css';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { IoIosMenu } from 'react-icons/io';
 import { CgCloseO } from 'react-icons/cg';
 import { CiShoppingCart, CiSearch } from 'react-icons/ci';
@@ -11,9 +10,10 @@ import en from '../../images/eng.png';
 import fn from '../../images/fn.png';
 import us from '../../images/us.png';
 
-function Navbar({ cartCount }) {
+function Navbar({ cartCount, toggleCart, cart,setCart }) {
   const [openDropDown, setOpenDropDown] = useState(false);
   const [selectOption, setSelectOption] = useState('english');
+  const [openDrop, setOpenDrop] = useState(false);
   const options = [
     { label: 'english', image: en },
     { label: 'france', image: fn },
@@ -23,8 +23,6 @@ function Navbar({ cartCount }) {
   const [menuIcon, setMenuIcon] = useState(window.innerWidth <= 850);
   const [bigmenu, setBigMenu] = useState(false);
   const [scroll, setScroll] = useState(window.scrollY);
-
-  const navigate = useNavigate();
 
   const handleResize = () => {
     const isMobile = window.innerWidth <= 850;
@@ -43,44 +41,32 @@ function Navbar({ cartCount }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleDropdown = () => setOpenDropDown(!openDropDown);
-  const selectLanguage = (option) => {
-    setSelectOption(option);
-    setOpenDropDown(false);
-  };
+  
+const incrementQty = (id) => {
+  setCart(prev =>
+    prev.map(item =>
+      item.id === id ? { ...item, quantity: (item.quantity || 1) + 1 } : item
+    )
+  );
+};
+
+const decrementQty = (id) => {
+  setCart(prev =>
+    prev.map(item =>
+      item.id === id && (item.quantity || 1) > 1
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
+    )
+  );
+};
 
   const toggleMenu = () => setBigMenu(!bigmenu);
 
   return (
     <header>
       <nav>
-        <div className='top-nav'>
-          <div className='top-nav-right'>
-            <button className='drop-down' onClick={toggleDropdown}>
-              <img
-                src={options.find(opt => opt.label === selectOption)?.image}
-                alt={selectOption}
-                style={{ width: '20px', height: '20px' }}
-              />
-              {selectOption} <FaAngleDown color='#ccced1' />
-            </button>
-            {openDropDown && (
-              <div className='box-drop-down'>
-                {options.map((option, index) => (
-                  <span
-                    key={index}
-                    onClick={() => selectLanguage(option.label)}
-                    className='span-drop-down'
-                  >
-                    <img src={option.image} alt={option.label} style={{ width: '20px', height: '20px' }} />
-                    {option.label}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-          <div className='top-nav-left'>Welcome</div>
-        </div>
+        
+      
 
         <div className='down-nav' style={{ top: scroll >= 1 ? '0px' : undefined }}>
           <div className='down-nav-1'>
@@ -95,9 +81,8 @@ function Navbar({ cartCount }) {
           <ul className={bigmenu ? 'big-menu' : ''} style={{ display: menuIcon ? (bigmenu ? 'flex' : 'none') : 'flex' }}>
             <li><NavLink to='/home'>Home</NavLink></li>
             <li><NavLink to='/about'>About</NavLink></li>
-            <li><NavLink to='/products'>Products</NavLink></li>
+            <li><NavLink to='/products'>Shop</NavLink></li>
             <li><NavLink to='/blog'>Blog</NavLink></li>
-            <li><NavLink to='/shop'>Shop</NavLink></li>
             <li><NavLink to='/contact'>Contact Us</NavLink></li>
           </ul>
 
@@ -105,9 +90,39 @@ function Navbar({ cartCount }) {
             <div className='carticon'>
               <CiSearch color='black' size={25} />
             </div>
-            <div className='carticon' onClick={() => navigate('/cart')}>
+
+            <div
+              className='carticon'
+              onMouseEnter={() => setOpenDrop(true)}
+              onMouseLeave={() => setOpenDrop(false)}
+            >
               <CiShoppingCart color='black' size={25} />
               <span className='counter'>{cartCount}</span>
+
+              {openDrop && cartCount > 0 && (
+                <div className='mini-cart-box'>
+                  {cart.map((item) => (
+  <div key={item.id} className='mini-cart-item'>
+    <img src={item.image} alt={item.title} />
+    <div>
+      <p className='mini-title'>{item.title}</p>
+      <p className='mini-price'>${item.price} × {item.quantity || 1}</p>
+      <div className='qty-controls'>
+        <button onClick={() => decrementQty(item.id)}>-</button>
+        <span style={{ margin: '0 10px' }}>{item.quantity || 1}</span>
+        <button onClick={() => incrementQty(item.id)}>+</button>
+      </div>
+    </div>
+  </div>
+))}
+
+                  <NavLink to="/cart">
+  <button className='mini-cart-btn'>
+    عرض السلة
+  </button>
+</NavLink>
+                </div>
+              )}
             </div>
           </div>
         </div>
