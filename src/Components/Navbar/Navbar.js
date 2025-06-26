@@ -1,24 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navabar.css';
 import { NavLink } from 'react-router-dom';
 import { IoIosMenu } from 'react-icons/io';
 import { CgCloseO } from 'react-icons/cg';
 import { CiShoppingCart, CiSearch } from 'react-icons/ci';
-import { FaAngleDown } from 'react-icons/fa6';
 import LogoDark from '../../images/logo_dark.png';
-import en from '../../images/eng.png';
-import fn from '../../images/fn.png';
-import us from '../../images/us.png';
 
 function Navbar({ cartCount, toggleCart, cart,setCart }) {
-  const [openDropDown, setOpenDropDown] = useState(false);
-  const [selectOption, setSelectOption] = useState('english');
   const [openDrop, setOpenDrop] = useState(false);
-  const options = [
-    { label: 'english', image: en },
-    { label: 'france', image: fn },
-    { label: 'united state', image: us },
-  ];
+  
 
   const [menuIcon, setMenuIcon] = useState(window.innerWidth <= 850);
   const [bigmenu, setBigMenu] = useState(false);
