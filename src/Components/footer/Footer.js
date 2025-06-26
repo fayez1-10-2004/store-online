@@ -58,13 +58,14 @@ function Footer() {
             </footer>
 
             <div className={footerStyle.footerBottom}>
-                <p>© 2025 All Rights Reserved by alhwary</p>
+                <p>Dircted by Eng/fayez mohammed</p>
                 <div className={footerStyle.paymentMethods}>
                     <img src={visa} alt="Visa" className={footerStyle.paymentIcon} />
                     <img src={amarican} alt="Discover" className={footerStyle.paymentIcon} />
                     <img src={mastercard} alt="MasterCard" className={footerStyle.paymentIcon} />
                     <img src={paypol} alt="PayPal" className={footerStyle.paymentIcon} />
                     <img src={discover} alt="American Express" className={footerStyle.paymentIcon} />
+                    
                 </div>
             </div>
         </section>

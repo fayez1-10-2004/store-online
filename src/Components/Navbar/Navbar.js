@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './Navabar.css';
 import { NavLink } from 'react-router-dom';
 import { IoIosMenu } from 'react-icons/io';
@@ -7,6 +9,7 @@ import { CiShoppingCart, CiSearch } from 'react-icons/ci';
 import LogoDark from '../../images/logo_dark.png';
 
 function Navbar({ cartCount, toggleCart, cart,setCart }) {
+  const navgate=useNavigate()
   const [openDrop, setOpenDrop] = useState(false);
   
 
@@ -86,7 +89,7 @@ const decrementQty = (id) => {
               onMouseEnter={() => setOpenDrop(true)}
               onMouseLeave={() => setOpenDrop(false)}
             >
-              <CiShoppingCart color='black' size={25} />
+              <CiShoppingCart color='black' size={25}  onClick={()=>navgate('./cart')}/>
               <span className='counter'>{cartCount}</span>
 
               {openDrop && cartCount > 0 && (

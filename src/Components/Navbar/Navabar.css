@@ -51,13 +51,13 @@ header nav .down-nav a:hover {
 
 header nav .big-menu {
   position: fixed;
-  top: 5px;
+  top: 50px;
   left: 70px;
   background: #fff;
   width: 500px;
   height: 400px;
   gap: 20px !important;
-  margin-top: 90px;
+  margin-top: 0px !important;
   display: flex !important; 
   justify-content: center !important;
   flex-direction: column !important;
