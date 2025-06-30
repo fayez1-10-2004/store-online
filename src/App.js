@@ -8,9 +8,12 @@ import { Route, Routes } from "react-router-dom";
 import SingleProduct from "./Components/Products/SingleProduct";
 import Navbar from "./Components/Navbar/Navbar";
 import Cart from "./Components/Products/Cart";
-import FormComponent from "./Routes/FormComponent";
 import axios from 'axios';
 import Promo from './Components/lodaing/Promo';
+import AutProvider from "./Context/ContextAuth";
+import Login from "./Components/Auth/login/Login";
+import Register from "./Components/Auth/register/Register";
+import Profile from "./Components/Auth/Profile/Profile";
 
 const App = () => {
   const [categories, setCategories] = useState([]);
@@ -41,6 +44,7 @@ const App = () => {
       .then((res) => {
         setProductfet(res.data);
         const randomproduct = res.data.sort(() => 0.4 - Math.random());
+        console.log(randomproduct)
         const top5 = randomproduct.slice(0, 4);
         const uniqueCategories = [...new Set(res.data.map(product => product.category))];
         setCategories(uniqueCategories);
@@ -61,14 +65,27 @@ const App = () => {
         <Route path="/products" element={<ProductsComponent setCart={setCart} productfet={productfet} />} />
         <Route path="/contact" element={<ContactComponent />} />
         <Route path="/products/:welcome" element={<SingleProduct />} />
-        <Route path="/Form" element={<FormComponent />} />
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route path="/login" element={<AutProvider>
+<Login/>
 
+</AutProvider>} />
+        <Route path="/Register" element={<AutProvider>
+<Register/>
+
+</AutProvider>} />
+<Route path="/Profile" element={<AutProvider>
+<Profile/>
+</AutProvider>}
+
+/>
       </Routes>
 
       {showCart && (
         <Cart cart={cart} setCart={setCart} onClose={() => setShowCart(false)} />
       )}
+
+
     </>
   );
 };

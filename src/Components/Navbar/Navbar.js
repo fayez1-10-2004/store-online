@@ -5,7 +5,8 @@ import './Navabar.css';
 import { NavLink } from 'react-router-dom';
 import { IoIosMenu } from 'react-icons/io';
 import { CgCloseO } from 'react-icons/cg';
-import { CiShoppingCart, CiSearch } from 'react-icons/ci';
+import { CiShoppingCart } from 'react-icons/ci';
+import { CgProfile } from "react-icons/cg";
 import LogoDark from '../../images/logo_dark.png';
 
 function Navbar({ cartCount, toggleCart, cart,setCart }) {
@@ -73,7 +74,7 @@ const decrementQty = (id) => {
 
           <ul className={bigmenu ? 'big-menu' : ''} style={{ display: menuIcon ? (bigmenu ? 'flex' : 'none') : 'flex' }}>
             <li><NavLink to='/home'>Home</NavLink></li>
-            <li><NavLink to='/about'>About</NavLink></li>
+            <li><NavLink to='/Login'>About</NavLink></li>
             <li><NavLink to='/products'>Shop</NavLink></li>
             <li><NavLink to='/blog'>Blog</NavLink></li>
             <li><NavLink to='/contact'>Contact Us</NavLink></li>
@@ -81,7 +82,7 @@ const decrementQty = (id) => {
 
           <div className='cart'>
             <div className='carticon'>
-              <CiSearch color='black' size={25} />
+              <CgProfile color='black' size={25}  onClick={()=>navgate('/Profile')}/>
             </div>
 
             <div
@@ -89,7 +90,7 @@ const decrementQty = (id) => {
               onMouseEnter={() => setOpenDrop(true)}
               onMouseLeave={() => setOpenDrop(false)}
             >
-              <CiShoppingCart color='black' size={25}  onClick={()=>navgate('./cart')}/>
+              <CiShoppingCart color='black' size={25}  onClick={()=>navgate('./Login')}/>
               <span className='counter'>{cartCount}</span>
 
               {openDrop && cartCount > 0 && (

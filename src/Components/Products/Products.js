@@ -68,7 +68,7 @@ function ShopwiseProducts({ productfet, setCart, Loading }) {
             <input 
               type="range" 
               min="50" 
-              max="300" 
+              max="100" 
               value={priceRange}
               onChange={(e) => setPriceRange(e.target.value)}
               className={styles.priceSlider} 
