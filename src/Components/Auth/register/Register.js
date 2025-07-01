@@ -24,7 +24,7 @@ navgate('/login')
 
 
   <form onSubmit={handelsubmit} className={styles.formContainer}>
-      <h2>Login Form</h2>
+      <h2>Register</h2>
       <input
       required
         type='text'

@@ -6,7 +6,7 @@ import styles from './Login.module.css'; // استدعاء الملف هنا
 
 function Login() {
   const navgate =useNavigate()
-  const { login } = useContext(ContextAuth);
+  const { login ,logut} = useContext(ContextAuth);
  
   const [pass, setpass] = useState('');
   const [phone, setphone] = useState('');
@@ -17,6 +17,7 @@ function Login() {
 
     if(  login( phone,pass)){
     navgate('/Home')
+    window.location.reload()
   }
 
 

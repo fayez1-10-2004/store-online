@@ -27,6 +27,7 @@ const login=(phone,pass)=>{
         const newUser={phone ,pass,fristname:regUser.fristname,lastname:regUser.lastname,email:regUser.email}
         setuser(newUser)
 localStorage.setItem('onuser',JSON.stringify(newUser))
+
 return true
     }
     else{
@@ -45,6 +46,13 @@ useEffect(()=>{
 localStorage.setItem('user',JSON.stringify(regUser))
 
 },[regUser])
+
+useEffect(() => {
+  const saveonuser = localStorage.getItem('onuser');
+  if (saveonuser) {
+    setuser(JSON.parse(saveonuser));
+  }
+}, []);
 return(
 
 <ContextAuth.Provider value={{regUser,user,login,logout,reg}}>

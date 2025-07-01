@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { ContextAuth } from '../../Context/ContextAuth';
 import './Navabar.css';
 import { NavLink } from 'react-router-dom';
 import { IoIosMenu } from 'react-icons/io';
 import { CgCloseO } from 'react-icons/cg';
 import { CiShoppingCart } from 'react-icons/ci';
 import { CgProfile } from "react-icons/cg";
+import { IoIosLogIn } from "react-icons/io";
 import LogoDark from '../../images/logo_dark.png';
 
 function Navbar({ cartCount, toggleCart, cart,setCart }) {
+
+  const{user}=useContext(ContextAuth)
   const navgate=useNavigate()
   const [openDrop, setOpenDrop] = useState(false);
   
@@ -23,6 +26,7 @@ function Navbar({ cartCount, toggleCart, cart,setCart }) {
     setMenuIcon(isMobile);
     if (!isMobile) setBigMenu(false);
   };
+console.log("From Navbar, user:", user);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
@@ -65,6 +69,7 @@ const decrementQty = (id) => {
         <div className='down-nav' style={{ top: scroll >= 1 ? '0px' : undefined }}>
           <div className='down-nav-1'>
             <img src={LogoDark} alt='logo' />
+            
           </div>
           <div className='menu-toggle'>
             {menuIcon && (
@@ -74,7 +79,7 @@ const decrementQty = (id) => {
 
           <ul className={bigmenu ? 'big-menu' : ''} style={{ display: menuIcon ? (bigmenu ? 'flex' : 'none') : 'flex' }}>
             <li><NavLink to='/home'>Home</NavLink></li>
-            <li><NavLink to='/Login'>About</NavLink></li>
+            <li><NavLink to='/about'>About</NavLink></li>
             <li><NavLink to='/products'>Shop</NavLink></li>
             <li><NavLink to='/blog'>Blog</NavLink></li>
             <li><NavLink to='/contact'>Contact Us</NavLink></li>
@@ -82,7 +87,20 @@ const decrementQty = (id) => {
 
           <div className='cart'>
             <div className='carticon'>
-              <CgProfile color='black' size={25}  onClick={()=>navgate('/Profile')}/>
+
+              {
+user?
+<>
+<CgProfile color='black' size={25} cursor={'pointer'}  onClick={()=>navgate('/Profile')}/>
+<p>{user.fristname}</p>
+</>
+
+:
+
+
+              <IoIosLogIn  color='black' size={25}  cursor={'pointer'} onClick={()=>navgate('./login')}/>
+              }
+
             </div>
 
             <div
@@ -90,7 +108,7 @@ const decrementQty = (id) => {
               onMouseEnter={() => setOpenDrop(true)}
               onMouseLeave={() => setOpenDrop(false)}
             >
-              <CiShoppingCart color='black' size={25}  onClick={()=>navgate('./Login')}/>
+              <CiShoppingCart color='black' size={25}  onClick={()=>navgate('./cart')}/>
               <span className='counter'>{cartCount}</span>
 
               {openDrop && cartCount > 0 && (

@@ -56,10 +56,13 @@ const App = () => {
   return (
     <>
       <Promo />
-      <Navbar setCart={setCart} cart={cart} cartCount={cart.length} toggleCart={() => setShowCart(!showCart)} />
+      <Navbar element={<AutProvider>
+<Navbar/>
+
+      </AutProvider>} setCart={setCart} cart={cart} cartCount={cart.length} toggleCart={() => setShowCart(!showCart) } />
       
       <Routes>
-        <Route path="/" element={<HomeComponent featured={featured} categories={categories} productfet={productfet} />} />
+        <Route path="/" element={ <HomeComponent featured={featured} categories={categories} productfet={productfet} />} />
         <Route path="/Home" element={<HomeComponent featured={featured} categories={categories} productfet={productfet} />} />
         <Route path="/about" element={<AboutComponent />} />
         <Route path="/products" element={<ProductsComponent setCart={setCart} productfet={productfet} />} />
@@ -70,10 +73,12 @@ const App = () => {
 <Login/>
 
 </AutProvider>} />
-        <Route path="/Register" element={<AutProvider>
-<Register/>
 
-</AutProvider>} />
+
+
+        <Route path="/Register" 
+        
+        element={<AutProvider><Register/></AutProvider>}/>
 <Route path="/Profile" element={<AutProvider>
 <Profile/>
 </AutProvider>}
