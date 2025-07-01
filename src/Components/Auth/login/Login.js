@@ -6,7 +6,7 @@ import styles from './Login.module.css'; // استدعاء الملف هنا
 
 function Login() {
   const navgate =useNavigate()
-  const { login ,logut} = useContext(ContextAuth);
+  const { login } = useContext(ContextAuth);
  
   const [pass, setpass] = useState('');
   const [phone, setphone] = useState('');
