@@ -40,7 +40,7 @@ const App = () => {
   }, [cart]);
 
   useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products`)
+    axios.get(  )
       .then((res) => {
         setProductfet(res.data);
         const randomproduct = res.data.sort(() => 0.4 - Math.random());

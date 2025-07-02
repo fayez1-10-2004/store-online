@@ -2,11 +2,13 @@ import React from 'react';
 import cartstyle from './Cart.module.css';
 
 function Cart({ cart, setCart }) {
-
+// remmove button
   const remove = (id) => {
     setCart(cart.filter(product => product.id !== id));
   };
 
+
+//button
   const increment = (id) => {
     setCart(cart.map(product =>
       product.id === id
